@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium from 'radium';
+
 import Person from './Person/Person';
 // import UserInput from './UserInput/UserInput';
 // import UserOutput from './UserInput/UserOutput';
@@ -47,16 +47,7 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '2px solid black',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+
     };
 
     let persons = null;
@@ -74,11 +65,11 @@ class App extends Component {
           })}
         </div>
       );
-      style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'lightred',
-        color: 'black'
-      }
+      // style.backgroundColor = 'red';
+      // style[':hover'] = {
+      //   backgroundColor: 'lightred',
+      //   color: 'black'
+      // }
     }
 
     const classes = [];
@@ -90,17 +81,18 @@ class App extends Component {
     }
 
     return (
+
       <div className="App">
         <h1>React App</h1>
-        <p className={classes.join(' ')}>Working!</p>
-        <button
-          style={style}
-          onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        <p className={classes.join(' ')}>Working React App!</p>
+        <button className="button" onClick={this.togglePersonsHandler}>Toggle Persons
+        </button>
         {persons}
       </div>
+
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
-export default Radium(App);
+export default App;
